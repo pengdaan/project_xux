@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>check_allInterface Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 2ex;
+    margin-bottom: 3ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /* width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 99%;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #74A474; }
+.failClass  { background-color: #FDD283; }
+.errorClass { background-color: #FF6600; }
+.passCase   { color: #6c6; }
+.failCase   { color: #FF6600; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+#div_base {
+            position:absolute;
+            top:0%;
+            left:5%;
+            right:5%;
+            width: auto;
+            height: auto;
+            margin: -15px 0 0 0;
+}
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+<div id="div_base">
+
+<div class='page-header'>
+<h1>check_allInterface Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-11-21 11:53:32</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.477000</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Failure 1 Error 2</p>
+
+</div>
+<p class='description'>Implementation Example whith:</p>
+
+
+
+<div class="btn-group btn-group-sm">
+<button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+<button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+<button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+</div>
+<p></p>
+<table id='result_table' class="table table-bordered">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>测试套件/测试用例</td>
+    <td>总数</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>查看</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_checks.Test</td>
+    <td>8</td>
+    <td>5</td>
+    <td>1</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c1',8)">详情</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_OrderByGoTime_sucess: 旅游通过出行日期查询已支付的订单接口检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: {
+          "code": 0, 
+          "data": [
+                    {
+                              "composite_status": 102, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "818", 
+                                                  "goods_name": "成本结算子商品来来来来来来1-supplier1-成本-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19142", 
+                              "order_sn": "LY67414324825958", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }, 
+                    {
+                              "composite_status": 102, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "784", 
+                                                  "goods_name": "解忧杂货铺啦啦啦啦-扣点出行A-0.1-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19628", 
+                              "order_sn": "LY67414928834948", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }, 
+                    {
+                              "composite_status": 102, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "784", 
+                                                  "goods_name": "解忧杂货铺啦啦啦啦-扣点出行A-0.1-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19678", 
+                              "order_sn": "LY67414951435938", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }, 
+                    {
+                              "composite_status": 109, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "784", 
+                                                  "goods_name": "解忧杂货铺啦啦啦啦-扣点出行A-0.1-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19720", 
+                              "order_sn": "LY67414956936768", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }, 
+                    {
+                              "composite_status": 116, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "784", 
+                                                  "goods_name": "解忧杂货铺啦啦啦啦-扣点出行A-0.1-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19743", 
+                              "order_sn": "LY67414966337208", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }, 
+                    {
+                              "composite_status": 109, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "784", 
+                                                  "goods_name": "解忧杂货铺啦啦啦啦-扣点出行A-0.1-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19827", 
+                              "order_sn": "LY77414276838738", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }, 
+                    {
+                              "composite_status": 102, 
+                              "consignee": "测试", 
+                              "goods_list": [
+                                        {
+                                                  "go_time": "2016-10-26", 
+                                                  "goods_id": "818", 
+                                                  "goods_name": "成本结算子商品来来来来来来1-supplier1-成本-有返现", 
+                                                  "goods_number": "1"
+                                        }
+                              ], 
+                              "mobile": "15914456230", 
+                              "order_id": "19968", 
+                              "order_sn": "LY77414481941468", 
+                              "uid": "47419788", 
+                              "user_id": "823"
+                    }
+          ], 
+          "msg": "SUCCESS"
+}
+(200, u'SUCCESS')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_OrderBySnTour_sucess: 旅游获取用户所有的订单列表接口检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: {
+          "code": 0, 
+          "data": {
+                    "bonus": "0.00", 
+                    "book_url": "http://www.woniutrip.com", 
+                    "composite_status": 110, 
+                    "composite_status_name": "已取消", 
+                    "confirm_time": "0", 
+                    "consignee": "你大爷", 
+                    "create_time": "1476946231", 
+                    "finish_time": "0", 
+                    "goods_amount": "0.10", 
+                    "identit_card": "", 
+                    "mobile": "18665002838", 
+                    "money_paid": "0.00", 
+                    "order_amount": "0.10", 
+                    "order_coupon": [], 
+                    "order_goods": [
+                              {
+                                        "app_id": "9", 
+                                        "base_day": "1", 
+                                        "base_num": "1", 
+                                        "coupons": "2", 
+                                        "end_return_time": "0", 
+                                        "extend_id": "", 
+                                        "extend_link": "", 
+                                        "go_time": "2016-10-28", 
+                                        "goods_attr": "2016-10-28", 
+                                        "goods_attr_id": "0", 
+                                        "goods_id": "784", 
+                                        "goods_name": "解忧杂货铺啦啦啦啦-扣点出行A-0.1-有返现", 
+                                        "goods_number": "1", 
+                                        "goods_own_type": "8", 
+                                        "goods_price": "0.10", 
+                                        "goods_thumb": "https://cdn-ly.mama.cn/d7cbeea1124138a377679d687bb4abc4.jpg", 
+                                        "goods_thumb_url": "https://cdn-ly.mama.cn/d7cbeea1124138a377679d687bb4abc4.jpg", 
+                                        "item_id": "0", 
+                                        "item_name": "", 
+                                        "item_num": "0", 
+                                        "item_timestamp": "0", 
+                                        "item_type": "0", 
+                                        "parent_id": "743", 
+                                        "product_id": "106492", 
+                                        "purchaser_id": "15", 
+                                        "purchaser_name": "总部—吴润斯", 
+                                        "rec_id": "20772", 
+                                        "reduce_price": "0.00", 
+                                        "return_anytime": "0", 
+                                        "shelf_life": "0", 
+                                        "shelf_life_start": "0", 
+                                        "without_return": "1"
+                              }
+                    ], 
+                    "order_id": "19658", 
+                    "order_sn": "LY67414946235558", 
+                    "order_status": "2", 
+                    "order_status_name": "已取消", 
+                    "parent_order": "0", 
+                    "pay_expire": "3600", 
+                    "pay_id": "0", 
+                    "pay_name": "", 
+                    "pay_status": "0", 
+                    "pay_status_name": "未付款", 
+                    "pay_time": "0", 
+                    "postscript": "", 
+                    "receive_time": "0", 
+                    "replace_order": {}, 
+                    "shipping_status": "0", 
+                    "shipping_status_name": "未发货", 
+                    "shipping_time": "0", 
+                    "source": "pc", 
+                    "source_type": "1", 
+                    "supplier_id": "124", 
+                    "supplier_name": "旅游测试供应商(扣点)", 
+                    "uid": "46491455", 
+                    "various_type": "0"
+          }, 
+          "msg": "SUCCESS"
+}
+(200, u'SUCCESS')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Pmsadd_sucess: Pms添加优惠劵</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: {
+          "code": 100, 
+          "msg": "ok"
+}
+(200, u'ok')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Pmsoperate_sucess: Pms操作优惠活动（开启、关闭）接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: {
+          "code": 100, 
+          "msg": "ok"
+}
+(200, u'ok')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_UserOrderListTour_success: 旅游获取用户所有的订单列表接口检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: {
+          "code": 0, 
+          "data": {
+                    "order_list": [], 
+                    "pager": {
+                              "page_num": 1, 
+                              "page_size": 20, 
+                              "total_size": "0"
+                    }
+          }, 
+          "msg": "SUCCESS"
+}
+(200, u'SUCCESS')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_UserOrderNums_sucess: 旅游根据订单分类获取分类订单总数接口检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        fail</a>
+
+    <div id='div_ft1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: {
+          "code": 10011003, 
+          "data": [], 
+          "msg": "无效订单分类: 2006"
+}
+Traceback (most recent call last):
+  File "D:\xux_project\test_case\test_checks.py", line 143, in test_UserOrderNums_sucess
+    self.assertEqual(self.msgs, 'SUCCESS')
+AssertionError: u'\u65e0\u6548\u8ba2\u5355\u5206\u7c7b: 2006' != 'SUCCESS'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_post_orderDP_sucess: 创建点评订单接口检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        error</a>
+
+    <div id='div_ft1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: {'uid': '43507844', 'timestamp': 1479700412, 'consignee': '\xe4\xb9\x88\xe4\xb9\x8822', 'shop_id': '38021', 'pay_expire': '7200', 'mobile': '13728142737', 'source': 'wap', 'shop_city': '289', 'products': [{'goods_name': '\xe6\x88\x90\xe6\x9c\xac\xe5\x95\x86\xe5\x93\x81001\xef\xbc\x88xsx\xe5\x8b\xbf\xe5\x8a\xa8\xef\xbc\x89', 'good s_number': '1', 'goods_attr': '\xe9\xbb\x98\xe8\xae\xa4\xe5\xb1\x9e\xe6\x80\xa7:\xe5\x9d\x87\xe7\xa0\x81', 'shop_price': '20.00', 'end_return_time': '0', 'supplier_id': '120', 'product_id': '10853', 'goods_id': '847', 'return_anytime': '0', 'product_sn': 'product2016101010853', 'use_coupon': '1', 'goods_thumb': 'http://cdn-dianping.mama.cn/upload/201610/20161010/6452620821fdfe3efdbd15a0ade355e8.jpg', 'goods_attr_id': '3031', 'without_return': '1'}], 'version': '2.0', 'api_key': '8d46b75a4a0456a35302d2893ed072a3', 'api_sign': '07038AD588E8D1704A47459253576492'}
+
+Notice: Undefined variable: mama_sign in /data/wwwroot/www.xiaoshuxiong.com/api/controllers/ApiController.php on line 193
+{"code":99000003,"msg":"Signature Verification Failed","data":[]}
+Traceback (most recent call last):
+  File "D:\xux_project\test_case\test_checks.py", line 35, in test_post_orderDP_sucess
+    if js.has_key('msg')==True:
+AttributeError: 'NoneType' object has no attribute 'has_key'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_post_orderDP_sucess: 创建点评订单接口检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: {'uid': '43507844', 'timestamp': 1479700412, 'consignee': '\xe4\xb9\x88\xe4\xb9\x8822', 'shop_id': '38021', 'pay_expire': '7200', 'mobile': '13728142737', 'source': 'wap', 'shop_city': '289', 'products': [{'goods_name': '\xe6\x88\x90\xe6\x9c\xac\xe5\x95\x86\xe5\x93\x81001\xef\xbc\x88xsx\xe5\x8b\xbf\xe5\x8a\xa8\xef\xbc\x89', 'good s_number': '1', 'goods_attr': '\xe9\xbb\x98\xe8\xae\xa4\xe5\xb1\x9e\xe6\x80\xa7:\xe5\x9d\x87\xe7\xa0\x81', 'shop_price': '20.00', 'end_return_time': '0', 'supplier_id': '120', 'product_id': '10853', 'goods_id': '847', 'return_anytime': '0', 'product_sn': 'product2016101010853', 'use_coupon': '1', 'goods_thumb': 'http://cdn-dianping.mama.cn/upload/201610/20161010/6452620821fdfe3efdbd15a0ade355e8.jpg', 'goods_attr_id': '3031', 'without_return': '1'}], 'version': '2.0', 'api_key': '8d46b75a4a0456a35302d2893ed072a3', 'api_sign': '07038AD588E8D1704A47459253576492'}
+
+Notice: Undefined variable: mama_sign in /data/wwwroot/www.xiaoshuxiong.com/api/controllers/ApiController.php on line 193
+{"code":99000003,"msg":"Signature Verification Failed","data":[]}
+Traceback (most recent call last):
+  File "D:\xux_project\Interface\check\interface_check.py", line 32, in tearDown
+    print(self.code,self.msgs)
+AttributeError: 'Test' object has no attribute 'msgs'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>总计</td>
+    <td>8</td>
+    <td>5</td>
+    <td>1</td>
+    <td>2</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</div>
+</body>
+</html>
